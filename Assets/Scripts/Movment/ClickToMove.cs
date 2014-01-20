@@ -39,10 +39,14 @@ public class ClickToMove : MonoBehaviour {
 
 	// Update is called once per frame
 	public void Update () {
-		if (Input.GetMouseButtonDown (0)) {
-			LocatePosition();
-			path = null;
-			seeker.StartPath (transform.position, targetPosition, OnPathComplete);
+		if (networkView.isMine) {
+						if (Input.GetMouseButtonDown (0)) {
+								LocatePosition ();
+								path = null;
+								seeker.StartPath (transform.position, targetPosition, OnPathComplete);
+						}
+				} else {
+			enabled = false;
 		}
 	}
 	
