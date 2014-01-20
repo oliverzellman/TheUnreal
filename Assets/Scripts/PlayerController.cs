@@ -23,26 +23,30 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (playerPhysics.movmentStopped) {
-			targetSpeed = 0;
-			currentSpeed = 0;
+		if (networkView.isMine) {
+						if (playerPhysics.movmentStopped) {
+								targetSpeed = 0;
+								currentSpeed = 0;
+						}
+
+						targetSpeed = Input.GetAxisRaw ("Horizontal") * speed;
+						currentSpeed = IncrementTowards (currentSpeed, targetSpeed, acceleration);
+
+						if (playerPhysics.grounded) {
+								amountToMove.y = 0;
+								//Jump
+								if (Input.GetButtonDown ("Jump")) {
+										amountToMove.y = jumpHeight;
+								}
+						}
+
+						amountToMove.x = currentSpeed;
+						//falling
+						amountToMove.y -= gravity * Time.deltaTime; 
+						playerPhysics.Move (amountToMove * Time.deltaTime);
+				} else {
+			enabled = false;		
 		}
-
-		targetSpeed = Input.GetAxisRaw ("Horizontal") * speed;
-		currentSpeed = IncrementTowards (currentSpeed, targetSpeed, acceleration);
-
-		if (playerPhysics.grounded) {
-			amountToMove.y = 0;
-			//Jump
-			if(Input.GetButtonDown("Jump")){
-				amountToMove.y = jumpHeight;
-			}
-		}
-
-		amountToMove.x = currentSpeed;
-		//falling
-		amountToMove.y -= gravity * Time.deltaTime; 
-		playerPhysics.Move (amountToMove * Time.deltaTime);
 	}
 
 	private float IncrementTowards(float n, float target, float a) {
