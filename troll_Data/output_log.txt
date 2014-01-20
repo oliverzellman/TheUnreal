@@ -1,0 +1,214 @@
+Initialize engine version: 4.3.2f1 (0517a5ae8669)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 9.0c [aticfx32.dll 8.17.10.1230]
+    Renderer: AMD Radeon HD 6800 Series
+    Vendor:   ATI
+    VRAM:     1003 MB (via DXGI)
+    Caps:     Shader=30 DepthRT=1 NativeDepth=1 NativeShadow=1 DF16=1 INTZ=1 RAWZ=0 NULL=1 RESZ=1 SlowINTZ=1
+Begin MonoManager ReloadAssembly
+Platform assembly: D:\TheUnreal\troll_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading D:\TheUnreal\troll_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: D:\TheUnreal\troll_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading D:\TheUnreal\troll_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: D:\TheUnreal\troll_Data\Managed\Pathfinding.Ionic.Zip.Reduced.dll (this message is harmless)
+Loading D:\TheUnreal\troll_Data\Managed\Pathfinding.Ionic.Zip.Reduced.dll into Unity Child Domain
+Platform assembly: D:\TheUnreal\troll_Data\Managed\Pathfinding.JsonFx.dll (this message is harmless)
+Loading D:\TheUnreal\troll_Data\Managed\Pathfinding.JsonFx.dll into Unity Child Domain
+- Completed reload, in  0.041 seconds
+desktop: 1920x1080 60Hz; virtual: 3200x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+Platform assembly: D:\TheUnreal\troll_Data\Managed\System.dll (this message is harmless)
+NoError
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Join....
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Connected to server
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+(-0.7, 0.0, -1.6)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+(-0.7, 0.0, -1.6)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+(-0.7, 0.0, -1.6)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+(-0.7, 0.0, -1.6)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+(-0.7, 0.0, -1.6)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+(-0.7, 0.0, -1.6)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+(-0.7, 0.0, -1.6)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+(-0.7, 0.0, -1.6)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+(-0.7, 0.0, -1.6)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+(-0.7, 0.0, -1.6)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+(-0.7, 0.0, -1.6)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+(-0.7, 0.0, -1.6)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+(-0.7, 0.0, -1.6)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+(-0.7, 0.0, -1.6)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Hello im triggered
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped rendering frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1539)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped rendering frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1539)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped rendering frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1539)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped rendering frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1539)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped rendering frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1539)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped rendering frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1539)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped rendering frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1539)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped rendering frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1539)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped rendering frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1539)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped rendering frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1539)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped rendering frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1539)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped rendering frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1539)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped rendering frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1539)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped rendering frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1539)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped rendering frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1539)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped rendering frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1539)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped rendering frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1539)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped rendering frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1539)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped rendering frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1539)
+
+HandleD3DDeviceLost
+  HandleD3DDeviceLost: still lost
+Skipped rendering frame because GfxDevice is in invalid state (device lost)
+ 
+(Filename:  Line: 1539)
+

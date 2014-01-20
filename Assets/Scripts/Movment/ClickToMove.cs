@@ -1,49 +1,83 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using Pathfinding;
 public class ClickToMove : MonoBehaviour {
-	public float speed;
-	public CharacterController controller;
-	private Vector3 position;
-	// Use this for initialization
-	void Start () {
-		position = transform.position;
-	}
+	private Vector3 targetPosition;
 	
-	// Update is called once per frame
-	void Update () {
-		//Left mouse button
-		if (Input.GetMouseButton (0)) {
-				//Locate where player clicked
+	private Seeker seeker;
+	private CharacterController controller;
+	
+	private Path path;
+	
+	public float speed = 100;
+	
+	public float nextWaypointDistance = 1;
+	
+	private int currentWaypoint = 0;
+	
+	// Use this for initialization
+	public void Start () {
+		seeker = GetComponent<Seeker> ();
+		controller = GetComponent<CharacterController> ();
 
-			locatePosition();
-		}
-
-		//Move player to pos
-
-		moveToPosition ();
 	}
 
-	void locatePosition(){
+
+	
+	
+	void LocatePosition(){
 		RaycastHit hit;
 		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
-
+		
 		if (Physics.Raycast (ray, out hit, 10000)) {
-			position = new Vector3(hit.point.x, hit.point.y,hit.point.z);
-			Debug.Log (position);
-
+			targetPosition = new Vector3(hit.point.x, hit.point.y,hit.point.z);
+			Debug.Log (targetPosition);
+			
 		}
 	}
 
-	void moveToPosition(){
-		if (Vector3.Distance (transform.position, position) > 1) {
-						Quaternion newRotation = Quaternion.LookRotation (position - transform.position, Vector3.forward);
-						newRotation.x = 0f;
-						newRotation.z = 0f;
-						transform.rotation = Quaternion.Slerp (transform.rotation, newRotation, Time.deltaTime * 10);
-						controller.SimpleMove (transform.forward * speed);
-		
-				} 
 
+	// Update is called once per frame
+	public void Update () {
+		if (Input.GetMouseButtonDown (0)) {
+			LocatePosition();
+			path = null;
+			seeker.StartPath (transform.position, targetPosition, OnPathComplete);
+		}
+	}
+	
+	public void OnPathComplete(Path p){
+		Debug.Log ("Eyy, back on track. Error? " + p.error);
+		if (path == null) {
+			path = p;
+			currentWaypoint = 0;
+		}
+	}
+	
+	public void FixedUpdate(){
+		if (path == null) {
+			return;
+		}
+		if (currentWaypoint >= path.vectorPath.Count) {
+			Debug.Log("End of Path Reached");
+			return;
+		}
+		
+		Vector3 dir = (path.vectorPath [currentWaypoint] - transform.position).normalized;
+		dir *= speed * Time.fixedDeltaTime;
+		controller.SimpleMove (dir);
+		Quaternion direction = Quaternion.LookRotation (dir);
+		direction.x = 0.0f;
+		direction.z = 0.0f;
+		transform.rotation = direction;
+		if (Vector3.Distance (transform.position, path.vectorPath [currentWaypoint]) < nextWaypointDistance) {
+			currentWaypoint++;
+			return;
+		}
 	}
 }
+
+
+
+
+

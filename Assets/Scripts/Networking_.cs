@@ -8,16 +8,19 @@ public class Networking_ : MonoBehaviour {
 	private HostData[] hd;
 	public GameObject playerPrefab;
 	public Transform spawnObject;
+
+	private string _IP = "83.254.134.189";
+
 	void StartServer(){
 		Network.InitializeServer (4, 25000, false);
-		MasterServer.ipAddress = "127.0.0.1";
+		MasterServer.ipAddress = _IP;
 		MasterServer.port = 23466;
 		MasterServer.RegisterHost(gameName, gameName);
 	}
 		
 
 	void JoinServer(){
-		Debug.Log (Network.Connect ("127.0.0.1", 25000));	
+		Debug.Log (Network.Connect (_IP, 25000));	
 		Debug.Log("Join....");
 	}
 
