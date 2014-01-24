@@ -9,6 +9,9 @@ public class Networking_ : MonoBehaviour {
 	public GameObject playerPrefab;
 	public Transform spawnObject;
 
+	MainCamera mainCamera = new MainCamera();
+	GameObject player;
+
 	private string _IP = "83.254.134.189";
 
 	void StartServer(){
@@ -51,7 +54,10 @@ public class Networking_ : MonoBehaviour {
 	}
 
 	void spawnPlayer() {
-		Network.Instantiate (playerPrefab, spawnObject.position, Quaternion.identity, 0);
+
+		 Network.Instantiate (playerPrefab, spawnObject.position, Quaternion.identity, 0);
+
+
 	}
 
 	void OnMasterServerEvent(MasterServerEvent mse){

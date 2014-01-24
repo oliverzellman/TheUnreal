@@ -14,7 +14,14 @@ public class ClickToMove : MonoBehaviour {
 	public float nextWaypointDistance = 1;
 	
 	private int currentWaypoint = 0;
-	
+
+
+	//Animation
+
+	public AnimationClip run;
+	public AnimationClip idle;
+
+	public static bool attack;
 	// Use this for initialization
 	public void Start () {
 		seeker = GetComponent<Seeker> ();
@@ -31,7 +38,8 @@ public class ClickToMove : MonoBehaviour {
 		
 		if (Physics.Raycast (ray, out hit, 10000)) {
 			targetPosition = new Vector3(hit.point.x, hit.point.y,hit.point.z);
-			Debug.Log (targetPosition);
+
+		
 			
 		}
 	}
@@ -44,6 +52,7 @@ public class ClickToMove : MonoBehaviour {
 								LocatePosition ();
 								path = null;
 								seeker.StartPath (transform.position, targetPosition, OnPathComplete);
+
 						}
 				} else {
 			enabled = false;
@@ -51,10 +60,11 @@ public class ClickToMove : MonoBehaviour {
 	}
 	
 	public void OnPathComplete(Path p){
-		Debug.Log ("Eyy, back on track. Error? " + p.error);
+
 		if (path == null) {
 			path = p;
 			currentWaypoint = 0;
+
 		}
 	}
 	
@@ -63,10 +73,16 @@ public class ClickToMove : MonoBehaviour {
 			return;
 		}
 		if (currentWaypoint >= path.vectorPath.Count) {
-			Debug.Log("End of Path Reached");
+
+			if(!attack)
+			animation.CrossFade(idle.name);
 			return;
 		}
-		
+
+		//Animate Run
+		if(!attack)
+		animation.CrossFade(run.name);
+
 		Vector3 dir = (path.vectorPath [currentWaypoint] - transform.position).normalized;
 		dir *= speed * Time.fixedDeltaTime;
 		controller.SimpleMove (dir);
