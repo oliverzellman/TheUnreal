@@ -17,11 +17,13 @@ public class ClickToMove : MonoBehaviour {
 
 
 	//Animation
-
+	public string[] animationList = {"idle","run","walk","attack","die"};
 	public AnimationClip run;
 	public AnimationClip idle;
 
 	public static bool attack;
+
+
 	// Use this for initialization
 	public void Start () {
 		seeker = GetComponent<Seeker> ();
@@ -49,9 +51,11 @@ public class ClickToMove : MonoBehaviour {
 	public void Update () {
 		if (networkView.isMine) {
 						if (Input.GetMouseButtonDown (0)) {
-								LocatePosition ();
-								path = null;
-								seeker.StartPath (transform.position, targetPosition, OnPathComplete);
+					LocatePosition ();
+					path = null;
+								
+								//seeker.StartPath (transform.position, targetPosition, OnPathComplete);
+				SetWalkingPath(transform.position, targetPosition);
 
 						}
 				} else {
@@ -75,13 +79,13 @@ public class ClickToMove : MonoBehaviour {
 		if (currentWaypoint >= path.vectorPath.Count) {
 
 			if(!attack)
-			animation.CrossFade(idle.name);
+			SetAnimation("idle");
 			return;
 		}
 
 		//Animate Run
-		if(!attack)
-		animation.CrossFade(run.name);
+		if (!attack)
+		SetAnimation (run.name);
 
 		Vector3 dir = (path.vectorPath [currentWaypoint] - transform.position).normalized;
 		dir *= speed * Time.fixedDeltaTime;
@@ -94,6 +98,46 @@ public class ClickToMove : MonoBehaviour {
 			currentWaypoint++;
 			return;
 		}
+	}
+
+
+	//Network Methods
+
+	public void SetAnimation(string animation)
+	{
+		for(int i=0; i<animationList.Length; i++)
+		{
+			if(animation == animationList[i])
+			{
+				networkView.RPC ("SendAnimationState",RPCMode.All, i);
+			}
+		}
+	}
+
+	public void SetWalkingPath(Vector3 target, Vector3 currentPos)
+	{
+		networkView.RPC ("NewPath",RPCMode.All, target, currentPos);
+	}
+
+
+
+	//RPC:S
+	[RPC]
+	void NewPath(Vector3 currentPos, Vector3 targetPos)
+	{
+		Debug.Log ("I am running");
+	
+		seeker.StartPath (currentPos,targetPos,OnPathComplete);
+	}
+
+
+	[RPC]
+	void SendAnimationState(int i)
+	{
+
+		Debug.Log ("I am animating");
+
+		animation.CrossFade (animationList [i].ToString());
 	}
 }
 
