@@ -11,7 +11,7 @@ public class ClickToMove : MonoBehaviour {
 	
 	public float speed = 100;
 	
-	public float nextWaypointDistance = 1;
+	public float nextWaypointDistance = 0;
 	
 	private int currentWaypoint = 0;
 
@@ -28,7 +28,6 @@ public class ClickToMove : MonoBehaviour {
 	public void Start () {
 		seeker = GetComponent<Seeker> ();
 		controller = GetComponent<CharacterController> ();
-
 	}
 
 
@@ -66,7 +65,7 @@ public class ClickToMove : MonoBehaviour {
 		if (path == null) {
 			path = p;
 			currentWaypoint = 0;
-
+			Debug.Log("PATH! COMPLEATOO");
 		}
 	}
 	
