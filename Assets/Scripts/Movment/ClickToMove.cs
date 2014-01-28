@@ -52,15 +52,13 @@ public class ClickToMove : MonoBehaviour {
 		if (networkView.isMine) {
 						if (Input.GetMouseButtonDown (0)) {
 					LocatePosition ();
-					path = null;
+					
 								
 								//seeker.StartPath (transform.position, targetPosition, OnPathComplete);
-				SetWalkingPath(transform.position, targetPosition);
+				networkView.RPC ("NewPath",RPCMode.All, targetPosition);
 
 						}
-				} else {
-			enabled = false;
-		}
+				} 
 	}
 	
 	public void OnPathComplete(Path p){
@@ -114,20 +112,19 @@ public class ClickToMove : MonoBehaviour {
 		}
 	}
 
-	public void SetWalkingPath(Vector3 target, Vector3 currentPos)
-	{
-		networkView.RPC ("NewPath",RPCMode.All, target, currentPos);
-	}
+
 
 
 
 	//RPC:S
 	[RPC]
-	void NewPath(Vector3 currentPos, Vector3 targetPos)
+	void NewPath(Vector3 targetPos)
 	{
+		path = null;
+		seeker.StartPath (transform.position,targetPos,OnPathComplete);
 		Debug.Log ("I am running");
 	
-		seeker.StartPath (currentPos,targetPos,OnPathComplete);
+
 	}
 
 
