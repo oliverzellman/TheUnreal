@@ -5,7 +5,7 @@ public class MainCamera : MonoBehaviour {
 	
 		
 	public Transform target;
-	public float distance = 1.5f;
+	public Vector3 distance;
 	public float height = 4.5f;
 	public float damping = 0.0f;
 	public bool followBehind = true;
@@ -31,8 +31,8 @@ public class MainCamera : MonoBehaviour {
 					float currentHeight = transform.position.y;
 
 						currentHeight = height;
-					transform.position = target.position;
-					transform.position -= Vector3.forward * distance;
+					transform.position = target.position + distance;
+					//transform.position -= Vector3.forward ;
 					Vector3 positionY = transform.position;
 					positionY.y = currentHeight;
 					transform.position = positionY;
